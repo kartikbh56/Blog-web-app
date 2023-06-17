@@ -1,0 +1,12 @@
+<%- include("partials/header"); -%>
+<h1>Home</h1>
+<p><%= homeStartingContent %></p>
+
+<% posts.forEach((element)=> { %>
+    <hr>
+    <h3><%=element.title%></h3>
+    <p><%=element.content.substring(0,150)%>
+        <% if(element.content.length>150) {%>
+        <a href="/posts/<%=element._id%>">...Read more</a></p> 
+        <%}%>
+<% }); %>
